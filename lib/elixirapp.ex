@@ -17,14 +17,19 @@ defmodule Elixirapp do
     # name = String.strip(name) # trim the string
     # two lines above can be writen as single line with pipe operator |>
     name = IO.gets("What is your name?") |> String.strip # name = String.strip(IO.gets("What is your name? "))
-    IO.inspect(name)
+    say_hello(name)
   end
 
-  def hello do
-    :world
+  def say_hello("") do
+    IO.puts "You need to provide a name!"
+    main()
   end
 
-  def say_hello() do
-    IO.puts "Hello world!"
+  def say_hello(name) do
+    IO.puts "Hello #{name}"
+  end
+
+  def say_hello(greeting, name) do
+    IO.puts "#{greeting} #{name}"
   end
 end
