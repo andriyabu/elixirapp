@@ -13,8 +13,10 @@ defmodule Elixirapp do
 
   """
   def main() do
-    name = IO.gets("What is your name?")
-    name = String.strip(name)
+    # name = IO.gets("What is your name?") # get input
+    # name = String.strip(name) # trim the string
+    # two lines above can be writen as single line with pipe operator |>
+    name = IO.gets("What is your name?") |> String.strip # name = String.strip(IO.gets("What is your name? "))
     IO.inspect(name)
   end
 
